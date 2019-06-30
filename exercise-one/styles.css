@@ -46,3 +46,53 @@
 .photo {
   width: 100%;
 }
+
+.navigation {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navigation-item {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Futura;
+  color: #666;
+  font-size: 30px;
+  font-weight: bold;
+  padding-left: 30px;
+  text-decoration: none;
+}
+
+.navigation-item:hover {
+  text-decoration: underline;
+}
+
+.politics {
+  background-color: #ffeaa7;
+}
+
+.technology {
+  background-color: #81ecec;
+}
+
+.local {
+  background-color: #55efc4;
+}
+
+.opinion {
+  background-color: #74b9ff;
+}
+
+.sports {
+  background-color: #a29bfe;
+}
