@@ -1,6 +1,48 @@
-h1 {
+* {
+  box-sizing: border-box;
+}
+
+.masthead {
   font-family: Snell Roundhand, serif;
   font-weight: 100;
   font-size: 60px;
   text-align: center;
+}
+
+.content {
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  display: flex;
+}
+
+.main {
+  border-right: 1px solid;
+  border-left: 1px solid;
+  width: 50%;
+}
+
+.headline {
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 100;
+  text-align: center;
+  margin: 30px 0 30px 0;
+}
+
+.column {
+  padding: 0 10px 0 10px;
+}
+
+.side {
+  width: 25%;
+}
+
+.text {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.photo {
+  width: 100%;
 }
