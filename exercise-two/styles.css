@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+
+/* 
+Clearing default button styles
+Based on https://css-tricks.com/overriding-default-button-styles/
+*/
+
+.button {
+  height: 100px;
+  width: 25%;
+  font-size: 40px;
+  background: #d8d9db;
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-decoration: none;
+  color: black;
+  font-family: sans-serif;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: solid black 1px;
+}
+
+.button:hover,
+.button:focus {
+  background: #ebebeb;
+}
+
+.button:hover:last-child,
+.button:focus:last-child {
+  background: #df974ce3;
+}
+
+.button:focus {
+  outline: 0;
+  outline-offset: -4px;
+}
+
+.button:active {
+  transform: scale(0.99);
+  background: #bbbcbe;
+}
+
+.button:active:last-child {
+  transform: scale(0.99);
+  background: #df974cab;
+}
+
+.display {
+  color: white;
+  text-align: right;
+  font-family: monospace;
+  font-size: 40px;
+  height: 85px;
+  padding: 20px 0;
+}
+
+.calculator {
+  width: 400px;
+  background: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.button.zero {
+  width: 75%;
+}
+
+.button.clear {
+  width: 50%;
+}
+
+.display {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.button:last-child {
+  background: #df974c;
+}
