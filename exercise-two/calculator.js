@@ -9,21 +9,23 @@ calculator.addEventListener("click", event => {
   const buttonText = event.target.innerHTML;
 
   if (event.target.tagName === "BUTTON") {
-    handleButtonPress(buttonText);
+    commands = updateCommands(buttonText, commands);
   }
 
   debugText.innerHTML =
     event.target.tagName + "\nCommands:" + JSON.stringify(commands, null, 2);
 });
 
-function handleButtonPress(buttonText) {
-  commands.push(buttonText);
+function updateCommands(buttonText, commands) {
+  const updated = commands.concat(buttonText);
 
   const isNumber = !Number.isNaN(parseInt(buttonText));
 
   if (!isNumber) {
     if (buttonText === "C") {
-      commands = [];
+      return [];
     }
   }
+
+  return updated;
 }
