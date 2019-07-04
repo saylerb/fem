@@ -23,30 +23,81 @@ calculator.addEventListener("click", event => {
 
 function update(buttonText, commands, displayChars) {
   const updatedCommands = commands.concat(buttonText);
-  const updatedDisplay = [...displayChars];
 
-  const isNumber = !Number.isNaN(parseInt(buttonText));
-
-  if (!isNumber) {
-    if (buttonText === "C") {
-      return [[], []];
-    } else if (buttonText === "←") {
-      return [
-        updatedCommands,
-        updatedDisplay.splice(0, updatedDisplay.length - 1)
-      ];
-    } else {
-      return [updatedCommands, []]; // An operator was pressed
-    }
-  } else {
-    updatedDisplay.push(buttonText);
+  if (buttonText === "C") {
+    return [[], []];
   }
 
-  return [updatedCommands, updatedDisplay];
+  if (buttonText === "←") {
+    return [updatedCommands, displayChars.splice(0, displayChars.length - 1)];
+  }
+
+  if (buttonText === "=") {
+    const result = calculate(commands);
+    return [updatedCommands, [result.toString()]];
+  }
+
+  if (!isNumber(buttonText)) {
+    return [updatedCommands, []];
+  }
+
+  // A number was pressed
+  return [updatedCommands, displayChars.concat(buttonText)];
 }
 
 function renderDisplay(displayChars) {
   const display = document.querySelector(".display");
 
   display.innerHTML = displayChars.join("");
+}
+
+function calculate(commands) {
+  let result = null;
+  let operator = null;
+
+  const combined = combineCommands(commands);
+
+  combined.forEach(thing => {
+    if (!isNumber(thing)) {
+      operator = thing;
+    }
+
+    if (isNumber(thing) && result === null) {
+      result = parseInt(thing);
+      operator = null;
+    }
+
+    if (isNumber(thing)) {
+      if (operator === "+") result += parseInt(thing);
+      if (operator === "×") result *= parseInt(thing);
+      if (operator === "÷") result /= parseInt(thing);
+      if (operator === "-") result -= parseInt(thing);
+    }
+  });
+  return Math.floor(result);
+}
+
+function combineCommands(commands) {
+  const combined = [];
+  let current = "";
+
+  commands.forEach(command => {
+    if (isNumber(command)) {
+      current = current.concat(command);
+    } else {
+      combined.push(current);
+      current = "";
+      combined.push(command);
+    }
+  });
+
+  combined.push(current);
+
+  console.log(combined);
+
+  return combined;
+}
+
+function isNumber(text) {
+  return !Number.isNaN(parseInt(text));
 }
