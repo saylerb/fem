@@ -1,4 +1,6 @@
 // code taken from one of the examples on popmotion.io
+const popmotion = require('popmotion');
+
 const ball = document.querySelector(".box");
 const divStyler = popmotion.styler(ball);
 const ballXY = popmotion.value({ x: 0, y: 0 }, divStyler.set);
