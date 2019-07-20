@@ -5,36 +5,28 @@ html {
 }
 /* inherit border-box on all elements in the universe and before and after
  */
-*, 
-*:before, 
+*,
+*:before,
 *:after {
   box-sizing: inherit;
 }
 
 body {
-	font-family: Arial, Geneva, sans-serif;
+  font-family: Arial, Geneva, sans-serif;
 }
 a {
-	color: #2772B0;
+  color: #2772b0;
 }
 .wrapper {
-	width: 97%;
-	max-width: 1200px;
-	margin: 0 auto;
-	float: none;
-	background-color: #fff;
+  width: 97%;
+  max-width: 1200px;
+  margin: 0 auto;
+  float: none;
+  background-color: #fff;
 }
 
 div img {
-	width: 100%;
-  max-width: 225px;
-	max-width: 225px; 
-  max-width: 225px;
-	max-width: 225px; 
-  max-width: 225px;
-	max-width: 225px; 
-  max-width: 225px;
-	max-width: 225px; 
+  width: 100%;
   max-width: 225px;
 }
 
