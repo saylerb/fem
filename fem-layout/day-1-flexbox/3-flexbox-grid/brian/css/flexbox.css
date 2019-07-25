@@ -32,9 +32,28 @@ div img {
 
 /* grid system -- mobile first! */
 
+.row {
+  display: flex; /* default */
+  flex-direction: row; /* default */
+  flex-wrap: wrap; /* default */
+  justify-content: flex-start; /* default */
+}
+
+.item {
+  background-color: #ffc;
+  flex-basis: 96%;
+  margin-left: 4%;
+}
+
 /* Mobile Landscape Screen Sizes */
 @media only screen and (min-width: 480px) {
+  .item {
+    flex-basis: 40%;
+  }
 }
 /* Desktop screen Sizes */
 @media only screen and (min-width: 768px) {
+  .item {
+    flex-basis: 20%;
+  }
 }
