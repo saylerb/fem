@@ -51,6 +51,18 @@ div img {
   margin-left: 4%;
 }
 
+.col-1-4-4 {
+  background-color: #ffc;
+  flex-basis: 92%;
+  margin-left: 4%;
+}
+
+.col-3-4-4 {
+  background-color: #fcf;
+  flex-basis: 92%;
+  margin-left: 4%;
+}
+
 /* Mobile Landscape Screen Sizes */
 @media only screen and (min-width: 480px) {
   .col-1-2-4 {
@@ -68,4 +80,12 @@ div img {
   }
 
   /* col-2-2-4 same as mobile landscape */
+
+  .col-1-4-4 {
+    flex-basis: 22%;
+  }
+
+  .col-3-4-4 {
+    flex-basis: 66%;
+  }
 }
