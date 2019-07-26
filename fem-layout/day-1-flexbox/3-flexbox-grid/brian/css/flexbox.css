@@ -39,21 +39,33 @@ div img {
   justify-content: flex-start; /* default */
 }
 
-.item {
+.col-1-2-4 {
   background-color: #ffc;
-  flex-basis: 96%;
+  flex-basis: 92%;
+  margin-left: 4%;
+}
+
+.col-2-2-4 {
+  background-color: #ccf;
+  flex-basis: 92%;
   margin-left: 4%;
 }
 
 /* Mobile Landscape Screen Sizes */
 @media only screen and (min-width: 480px) {
-  .item {
-    flex-basis: 40%;
+  .col-1-2-4 {
+    flex-basis: 44%;
+  }
+
+  .col-2-2-4 {
+    flex-basis: 44%;
   }
 }
 /* Desktop screen Sizes */
 @media only screen and (min-width: 768px) {
-  .item {
+  .col-1-2-4 {
     flex-basis: 20%;
   }
+
+  /* col-2-2-4 same as mobile landscape */
 }
