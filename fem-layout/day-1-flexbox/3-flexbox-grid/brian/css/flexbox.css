@@ -113,4 +113,14 @@ div img {
     flex-basis: 44%;
     order: 0;
   }
+
+  /* 
+	since reversing flex-direction switches the base line from left to right
+	so all flex items are pushed as far to the right as possible
+	to force items to the left while reversing, we can add justify-content: flex-end 
+	*/
+  .reverse {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
 }
