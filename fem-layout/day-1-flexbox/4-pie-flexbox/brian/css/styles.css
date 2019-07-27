@@ -35,6 +35,10 @@ nav {
   background: url(../img/scallop.png) repeat-x;
 }
 nav ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
   list-style-type: none;
   background-color: #e6bf98;
   padding: 0.75em;
@@ -42,18 +46,11 @@ nav ul {
   border-bottom: 3px solid #cc8850;
   overflow: auto;
 }
-/* splits nav into 2 columns
-http://stackoverflow.com/questions/13104818/simple-2-column-navigation-with-css-and-a-single-list */
-nav li:nth-child(even) {
-  width: 50%;
-  float: right;
-  padding: 0.5em;
+
+nav li {
+  flex-basis: 50%;
 }
-nav li:nth-child(odd) {
-  width: 50%;
-  float: left;
-  padding: 0.5em;
-}
+
 nav a {
   color: #c80060;
   text-decoration: none;
@@ -177,13 +174,9 @@ footer a {
     margin-right: 3%;
   }
 
-  nav li,
-  nav li:nth-child(even),
-  nav li:nth-child(odd) {
-    display: inline-block;
-    float: none;
-    width: auto;
-    padding: 0;
+  nav li {
+    flex-basis: unset;
+    flex-wrap: nowrap;
   }
   nav a {
     padding: 0em 1em 0em 1em;
@@ -226,14 +219,12 @@ footer a {
   div.row {
     padding: 0;
   }
-  nav li,
-  nav li:nth-child(even),
-  nav li:nth-child(odd) {
-    display: inline-block;
-    float: none;
-    width: auto;
-    padding: 0;
+
+  nav li {
+    flex-basis: unset;
+    flex-wrap: nowrap;
   }
+
   nav a {
     padding: 0em 1em 0em 1em;
   }
