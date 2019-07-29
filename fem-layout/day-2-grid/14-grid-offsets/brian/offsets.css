@@ -8,21 +8,26 @@
   border-radius: 1em;
 }
 header {
-  background-color: blue;
+  background-color: peru;
   color: white;
 }
 article {
-  background-color: green;
+  background-color: darkcyan;
   color: white;
 }
 aside {
-  background-color: yellow;
+  background-color: blanchedalmond;
 }
 article aside {
   background-color: white;
   color: black;
   padding: 0.5em;
   border-radius: 0.5em;
+}
+
+.nested {
+  display: grid;
+  gap: 1em;
 }
 
 @media (min-width: 650px) {
@@ -37,6 +42,19 @@ article aside {
   .sidebar {
     grid-column: 2 / 3;
     grid-row: 1 / 3;
+  }
+
+  .nested aside:first-child {
+    grid-area: first-aside;
+  }
+
+  .nested aside:last-child {
+    grid-area: last-aside;
+  }
+
+  .nested {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "first-aside ... last-aside";
   }
 }
 @media (min-width: 1000px) {
